@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Academy Verification email</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+        }
+        body {
+            
+            font-size: 36px;
+            line-height: 1.5;
+            background-color: #fafafa;
+            color: #222;
+        }
+
+        h1{
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+
+        }
+
+        p{
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        table, td{
+            vertical-align: top;
+        }
+
+
+        /* layout */
+        .email-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .email-header {
+            background-color: #0070f0f3;
+            padding: 24px;
+            color: #fff;
+        }
+
+        .email-body{
+            padding: 24px;
+            background-color: #fff;
+        }
+
+        .email-footer{
+            padding: 24px;
+            background-color: #f6f6f6;
+        }
+
+/* button */
+        .button{
+display: inline-block;
+color: #fff;
+font-size: 16px;
+font-weight: 700;
+text-align: center;
+padding: 12px 24px;
+border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <section class="email-wrapper">
+        <div class="email-header">
+            <h1>Welcome to my LMS Academy</h1>
+        </div>
+
+        <div class="email-body">
+           <p> Hello <%= user.name %>, </p>
+           <p> Thank you for registering with our LMS academy, To activate your account, please use the following activation code:</p>
+           <h2><%= activationCode %></h2>
+
+           <p>Please enter this code on the activation page within the next 5minutes</p>
+           <p>if you did not register for our academy, please ignore this email</p>
+        </div>
+
+        <footer class="email-footer">
+            <p>If you have any questions, please don't hesitate to contact us at <a href="mailto:enitanpeters28@gmail.com">enitanpeters28@gmail.com</a></p>
+        </footer>
+    </section>
+</body>
+</html>

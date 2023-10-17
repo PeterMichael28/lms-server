@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f4;
+    }
+    .con {
+        max-width: 600px;
+        height: 100v;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #4f5ef1;
+        box-shadow: 0 4px 8px rgba(0,0,0, .1);
+        color: #fff;
+    }
+
+    .msg,
+    .msg-sm  {
+        text-align: center;
+        font-size: 17px;
+        margin-bottom: 10px;
+        padding-top: 50px;
+    }
+
+    .msg-sm > h1 {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .course-info {
+        margin: auto;
+        padding-block: 20px;
+        width: 100%;
+        background-color: #fff;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 2px rgba(206, 107, 197, .1);
+        color: #000;
+    }
+
+    .course-info > h4 {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 500;
+        color: #23bd70;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .course-name {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .purchase-info {
+        font-size: 16px;
+    }
+
+    .total{
+        font-size: 18px;
+        text-align: right;
+        margin-top: 20px;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 100px;
+        color: #fff;
+    }
+
+    .footer > p > a {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+    }
+
+    .flex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.103);
+    }
+
+    .flex h4 {
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+    .flex.lg{
+        margin: auto;
+        border-bottom: none;
+        width: 85%;
+    }
+
+    .first-td{
+        text-transform: uppercase;
+        color: #0000006c;
+        font-size: 16px;
+        padding-block: 5px;
+        width: 1%;
+        font-weight: 600 !important;
+    }
+
+    .second-td {
+        font-weight: 500 !important;
+        color: #000000af;
+        font-size: 15px;
+    }
+
+    .title{
+        font-size: 15px !important;
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td{
+        padding: 10px;
+        text-align: center;
+        width: 28.3%;
+    }
+
+    td.col-2{
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .m-auto {
+        width: 100%;
+        margin: auto;
+    }
+    .table-row {
+        width: 70%;
+        display: block;
+        margin: auto;
+        padding-block: 10px;
+    }
+</style>
+
+</head>
+<body>
+<div class="con">
+    <div class="msg-sm">
+        <h1>Your LMS order is confirmed!</h1>
+        <p>
+            And we're just excited as you are.
+        </p>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="course-info">
+        <h4>Here is what you ordered:</h4>
+
+        <table style="border-bottom: 1px solid #0000002f;">
+            <tr>
+                <td>
+                    Order #: <%= order._id %>
+                </td>
+
+                <td>
+                    Order Date: <%= order.date %>
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 90%; margin: auto; display: block;">
+            <tr>
+                <th class="first-td">Item</th>
+                <th class="first-td">Qty</th>
+                <th class="first-td">Cost</th>
+            </tr>
+
+
+        </table>
+
+        <table style="width: 90%; margin: auto; display: block;">
+            <tr>
+               <td class="second-td"><%= order.name %></td>
+               <td class="second-td">1</td>
+               <td class="second-td"><%= order-price %></td>
+            </tr>
+
+
+        </table>
+
+        <table style="border-bottom: 1px solid #00000029;" class="table-row">
+            <tr>
+               <td class="col-2">Subtotal:</td>
+               <td class="col-2"><%= order.price %></td>
+               <td class="col-2"><%= order.price %></td>
+            </tr>
+        </table>
+
+        <table style="margin-top: -20px;" class="table-row">
+            <tr>
+               <td class="col-2">Total:</td>
+               <td class="col-2"><%= order.price %></td>
+               <td class="col-2"><%= order.price %></td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+    <footer class="footer">
+        <p>If you have any questions, please don't hesitate to contact us at <a href="mailto:enitanpeters28@gmail.com">enitanpeters28@gmail.com</a></p>
+        <p>
+            &copy; 2023 LMS. All rights reserved.
+        </p>
+    </footer>
+</div>
+</body>
+</html>
